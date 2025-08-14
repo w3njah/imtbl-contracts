@@ -71,7 +71,16 @@ jobs:
       #       README.md
       #       LICENSE.md
       #       package.json
-  
+        
+      - name: Pack NPM package
+        run: |
+          npm pack
+
+      - name: Generate attestation
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: ./*.tgz
+
       - name: Publish package
         uses: JS-DevTools/npm-publish@v3
         with:
@@ -79,8 +88,3 @@ jobs:
           access: public
           tag: "latest"
           provenance: true
-
-      - name: Generate attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-path: ./*.tgz
