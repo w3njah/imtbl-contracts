@@ -79,3 +79,8 @@ jobs:
           access: public
           tag: "latest"
           provenance: true
+
+      - name: Generate attestation
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: ./*.tgz
