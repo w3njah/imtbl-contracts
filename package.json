@@ -1,5 +1,5 @@
 {
-  "name": "@imtbl/contracts",
+  "name": "@w3njah/contracts",
   "description": "Immutable Smart Contracts",
   "version": "0.0.0",
   "main": "dist/index.js",
